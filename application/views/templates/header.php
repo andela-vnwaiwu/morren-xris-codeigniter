@@ -8,14 +8,14 @@
     <title>Morren-Xris Hotels</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <link type="text/css" rel="stylesheet" href="views/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/materialize.min.css">
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <link type="text/css" rel="stylesheet" href="views/css/style.css">
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/style.css">
 
-    <script type="text/javascript" src="views/js/jquery-2.2.4.min.js"></script>
-    <script type="text/javascript" src="views/js/materialize.min.js"></script>
-    <script type="text/javascript" src="views/js/countries.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>js/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>js/materialize.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>js/countries.js"></script>
   </head>
   <body>
     <header>
