@@ -14,7 +14,7 @@
     </div>
     <div class="row">
       <?php
-      // Display each images queried from the database
+        // Display each images queried from the database
         foreach ($query as $row) {
           echo "<div class=\"col m3 s12 gallery\">";
           echo "<img class=\"materialboxed\" width=\"250\""; 
