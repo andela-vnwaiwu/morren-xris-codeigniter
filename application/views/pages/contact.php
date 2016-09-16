@@ -10,7 +10,7 @@
     <p class="text-justify flow-text">Use the form below or give us a call on:</br>+234 803 307 2447</p>
   </div>
   <div class="container">
-      <form class="col s12" action="mail.php" method="post">
+      <form class="col s12" action="<?php echo base_url();?>index.php/contact/sendmail" method="post">
         <div class="row">
           <div class="input-field col s6">
             <input placeholder="Enter your First Name" id="first_name" name="first_name" type="text" class="validate">

@@ -5,7 +5,7 @@
 <html>
   <head>
 
-    <title>Morren-Xris Hotels</title>
+    <title><?php echo $title ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/materialize.min.css">
@@ -22,12 +22,12 @@
       <nav class="lime lighten-2">
         <div class="container">
           <div class="nav-wrapper">
-            <a href="?controller=pages&action=home" class="brand-logo"> Morren-Xris </a>
+            <a href="/morren-xris" class="brand-logo"> Morren-Xris </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="/morren">HOME</a></li>
-              <li><a href="index.php?controller=pages&action=about">ABOUT US</a></li>
-              <li><a href="index.php?controller=pages&action=gallery">GALLERY</a></li>
-              <li><a href="index.php?controller=pages&action=contact">CONTACT US</a></li>
+              <li><a href="<?php echo base_url(); ?>index.php">HOME</a></li>
+              <li><a href="<?php echo base_url(); ?>index.php/about">ABOUT US</a></li>
+              <li><a href="<?php echo base_url(); ?>index.php/gallery">GALLERY</a></li>
+              <li><a href="<?php echo base_url(); ?>index.php/contact">CONTACT US</a></li>
             </ul>
           </div>
         </div>
