@@ -104,7 +104,7 @@ class CI_Email {
 	 *
 	 * @var	int
 	 */
-	public $smtp_timeout	= 5;
+	public $smtp_timeout	= 10;
 
 	/**
 	 * SMTP persistent connection
