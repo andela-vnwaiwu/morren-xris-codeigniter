@@ -48,7 +48,7 @@ class Contact extends CI_Controller {
     } else {
 
       // redirects user who accidentally visits this url to the contact page
-      header("location: http://localhost/morren/index.php?controller=pages&action=contact");
+      header("location:" .base_url()."index.php/contact");
     }
 
     
