@@ -26,5 +26,6 @@
       parent::__construct();
 
       $this->load->library('session');
+      $this->load->model('admin/users_model', '', TRUE);
     }
   }
