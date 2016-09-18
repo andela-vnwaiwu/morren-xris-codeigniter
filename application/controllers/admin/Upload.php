@@ -12,9 +12,9 @@ class Upload extends BackendController {
 
     $data['title'] = ucfirst('Upload'); // Capitalize the first letter
 
-    $this->load->view('templates/header', $data);
+    $this->load->view('admin/templates/header', $data);
     $this->load->view('admin/pages/upload', array('error' => ' ' ));
-    $this->load->view('templates/footer');
+    $this->load->view('admin/templates/footer');
   }
 
   public function do_upload() {
@@ -34,9 +34,9 @@ class Upload extends BackendController {
     if ( ! $this->upload->do_upload($field_name)) {
       $error = array('error' => $this->upload->display_errors());
 
-      $this->load->view('templates/header', $data);
+      $this->load->view('admin/templates/header', $data);
       $this->load->view('admin/pages/upload', $error);
-      $this->load->view('templates/footer');
+      $this->load->view('admin/templates/footer');
 
     } else {
 
@@ -47,9 +47,9 @@ class Upload extends BackendController {
 
       $this->gallery_model->set_image($path, $title);
 
-      $this->load->view('templates/header', $data);
+      $this->load->view('admin/templates/header', $data);
       $this->load->view('admin/pages/upload_success', $data);
-      $this->load->view('templates/footer');
+      $this->load->view('admin/templates/footer');
     }
   }
 
