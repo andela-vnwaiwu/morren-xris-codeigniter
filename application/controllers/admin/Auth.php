@@ -10,23 +10,14 @@ class Auth extends BackendController {
 
   public function index() {
     parent::checkLoginStatus();
-
-    // $this->session->sess_destroy();
-
-    // $data['title'] = ucfirst('Login'); // Capitalize the first letter
-
-    // $this->load->view('admin/templates/header', $data);
-    // $this->load->view('admin/pages/auth', array('error' => ' ' ));
-    // $this->load->view('admin/templates/footer');
   }
-
+  // checks if the admin details are correct from the database'
   public function check_auth() {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
     $user = $this->users_model->get_user($username, $password);
     if (count($user) == 1){
-      // $user_info = $user[0];
       $user_info = array(
         'username'  => $user[0]->username,
         'email'     => $user[0]->email,
@@ -54,8 +45,6 @@ class Auth extends BackendController {
     $this->load->view('admin/templates/header');
     $this->load->view('admin/pages/auth');
     $this->load->view('admin/templates/footer');
-
-
   }
 
 }
