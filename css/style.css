@@ -1,3 +1,13 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
 nav {
     color: #333;
 }
@@ -119,4 +129,15 @@ button {
 
 .success {
     color: green;
+}
+
+.login-form {
+    margin: auto;
+    width: 40%;
+    padding: 20px;
+}
+
+#login-button {
+    width: 60%;
+    margin: auto;
 }
