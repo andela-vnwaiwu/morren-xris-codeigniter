@@ -10,23 +10,16 @@
     }
 
     public function index() {
+      parent::checkLoginStatus();
 
-      $this->checkLoginStatus();
       $data['title'] = 'Admin';
 
       $this->load->helper('url');
-      $this->load->view('templates/header', $data);
-      $this->load->view('pages/contact');
-      $this->load->view('templates/footer');
+      $this->load->view('admin/templates/header', $data);
+      $this->load->view('admin/pages/upload');
+      $this->load->view('admin/templates/footer'); 
+      
     }
 
-    // redirect user to login page if not logged in
-    protected function checkLoginStatus() {
-
-      $user = $this->users_model->get_user();
-      if (!$this->session->userdata()) {
-        redirect('login');
-      }
-    }
   }
   

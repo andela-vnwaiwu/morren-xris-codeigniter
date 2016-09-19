@@ -9,6 +9,7 @@ class Upload extends BackendController {
   }
 
   public function index() {
+    parent::checkLoginStatus();
 
     $data['title'] = ucfirst('Upload'); // Capitalize the first letter
 

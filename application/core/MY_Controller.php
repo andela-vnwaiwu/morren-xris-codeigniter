@@ -28,4 +28,19 @@
       $this->load->library('session');
       $this->load->model('admin/users_model', '', TRUE);
     }
+
+    //redirect user to login page if not logged in
+    protected function checkLoginStatus() {
+      
+      // $user = $this->users_model->get_user();
+      if ($this->session->has_userdata('username')) {
+       return TRUE; 
+      } else {
+        $data['title'] = 'Login';
+        $this->load->helper('url');
+        $this->load->view('admin/templates/header', $data);
+        $this->load->view('admin/pages/auth');
+        $this->load->view('admin/templates/footer');
+      }
+    }
   }

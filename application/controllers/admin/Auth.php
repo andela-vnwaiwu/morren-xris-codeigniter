@@ -9,13 +9,53 @@ class Auth extends BackendController {
   }
 
   public function index() {
+    parent::checkLoginStatus();
 
-    $data['title'] = ucfirst('Login'); // Capitalize the first letter
+    // $this->session->sess_destroy();
 
-    $this->load->view('admin/templates/header', $data);
-    $this->load->view('admin/pages/auth', array('error' => ' ' ));
-    $this->load->view('admin/templates/footer');
+    // $data['title'] = ucfirst('Login'); // Capitalize the first letter
+
+    // $this->load->view('admin/templates/header', $data);
+    // $this->load->view('admin/pages/auth', array('error' => ' ' ));
+    // $this->load->view('admin/templates/footer');
   }
 
+  public function check_auth() {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $user = $this->users_model->get_user($username, $password);
+    if (count($user) == 1){
+      // $user_info = $user[0];
+      $user_info = array(
+        'username'  => $user[0]->username,
+        'email'     => $user[0]->email,
+        'logged_in' => TRUE
+      );
+
+      $this->session->set_userdata($user_info);
+
+      $this->load->view('admin/templates/header');
+      $this->load->view('admin/pages/upload');
+      $this->load->view('admin/templates/footer');
+    } else {
+
+      $this->load->view('admin/templates/header');
+      $this->load->view('admin/pages/auth');
+      $this->load->view('admin/templates/footer');
+    }
+    
+  }
+
+  public function logout() {
+
+    $this->session->sess_destroy();
+
+    $this->load->view('admin/templates/header');
+    $this->load->view('admin/pages/auth');
+    $this->load->view('admin/templates/footer');
+
+
+  }
 
 }
