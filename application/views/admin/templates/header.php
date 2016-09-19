@@ -24,12 +24,12 @@
           <div class="nav-wrapper">
             <a href="/morren-xris" class="brand-logo"> Morren-Xris </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="<?php echo base_url(); ?>/admin">Dashboard</a></li>
-              <li><a href="<?php echo base_url(); ?>index.php/about">ABOUT US</a></li>
-              <li><a href="<?php echo base_url(); ?>index.php/gallery">GALLERY</a></li>
-              <li><a href="<?php echo base_url(); ?>index.php/contact">CONTACT US</a></li>
+              <li><a href="<?php echo base_url(); ?>admin">Dashboard</a></li>
+              <li><a href="<?php echo base_url(); ?>admin/upload">UPLOAD</a></li>
+              <li><a href="<?php echo base_url(); ?>admin/auth/logout">LOGOUT</a></li>
             </ul>
           </div>
         </div>
       </nav>
     </header>
+    <main>
