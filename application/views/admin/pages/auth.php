@@ -4,11 +4,11 @@
       <p class="center-align flow-text">Enter the login details to go view dashboard</p>
     </div>
     <div class="login-form z-depth-3">
-      <form method="post" action="<?php echo base_url(); ?>admin/auth/check_auth">
+      <form method="post" action="<?php echo base_url(); ?>admin/auth/login">
         <div class="row">
           <div class="col s12">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" placeholder="Enter your username"/>
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" placeholder="Enter your email"/>
           </div>
         </div>
         <div class="row">
