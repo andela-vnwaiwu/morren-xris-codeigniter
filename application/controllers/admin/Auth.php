@@ -13,7 +13,8 @@ class Auth extends BackendController {
     if ($check_user == TRUE) {
       redirect('admin/');
     } else {
-      $this->load->view('admin/templates/header');
+      $data['title'] = 'Admin Login';
+      $this->load->view('admin/templates/header', $data);
       $this->load->view('admin/pages/auth');
       $this->load->view('admin/templates/footer');
     }
