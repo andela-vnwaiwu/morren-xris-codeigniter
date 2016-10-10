@@ -17,9 +17,9 @@
     }
 
     // gets the user from the database.
-    public function get_user($username, $password) {
+    public function get_user($email, $password) {
       $this->db->select('*');
-      $this->db->where('username', $username );
+      $this->db->where('email', $email );
       $this->db->where('password', $password );
       $this->db->where('role', 'admin');
       $query = $this->db->get('users');

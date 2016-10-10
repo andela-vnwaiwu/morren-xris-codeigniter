@@ -2,8 +2,7 @@
   <div class="container">
     <h3>Image Upload</h3>
     <p class="flow-text">Select an image to upload and click the submit button to upload</p>
-   <p style="color: red;" class="flow-text"><?php echo $error;?></p>
-
+    
     <?php echo form_open_multipart('admin/upload/do_upload');?>
       <div class="row">
         <div class="col s6">
