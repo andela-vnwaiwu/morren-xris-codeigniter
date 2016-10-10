@@ -2,49 +2,48 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Auth extends BackendController {
-
-  public function __construct() {
-    parent::__construct();
-    $this->load->helper(array('form', 'url'));
-  }
-
-  public function index() {
-    parent::checkLoginStatus();
-  }
-  // checks if the admin details are correct from the database'
-  public function check_auth() {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    $user = $this->users_model->get_user($username, $password);
-    if (count($user) == 1){
-      $user_info = array(
-        'username'  => $user[0]->username,
-        'email'     => $user[0]->email,
-        'logged_in' => TRUE
-      );
-
-      $this->session->set_userdata($user_info);
-
-      $this->load->view('admin/templates/header');
-      $this->load->view('admin/pages/upload');
-      $this->load->view('admin/templates/footer');
+	
+	public function __construct() {
+		parent::__construct();
+		$this->load->helper(array('form', 'url'));
+	}
+	
+	public function index() {
+		$check_user = parent::checkLoginStatus();
+    if ($check_user == TRUE) {
+      redirect('admin/');
     } else {
-
-      $this->load->view('admin/templates/header');
+      $data['title'] = 'Admin Login';
+      $this->load->view('admin/templates/header', $data);
       $this->load->view('admin/pages/auth');
       $this->load->view('admin/templates/footer');
     }
-    
+	}
+	// 	checks if the admin details are correct from the database'
+  public function login() {
+    // if($this->input->post('submit') == TRUE) {
+      $email = $_POST['email'];
+      $password = $_POST['password'];
+      $user = $this->users_model->get_user($email, $password);
+      if (count($user) == 1){
+        $user_info = array(
+          'firstname'  => $user[0]->firstname,
+          'email'     => $user[0]->email,
+          'logged_in' => TRUE
+        );
+        $this->session->set_userdata($user_info);
+        redirect('admin/');
+      } else {
+        redirect('admin/auth');
+      }
+
+    // }
   }
 
   public function logout() {
-
     $this->session->sess_destroy();
-
     $this->load->view('admin/templates/header');
     $this->load->view('admin/pages/auth');
     $this->load->view('admin/templates/footer');
   }
-
 }
