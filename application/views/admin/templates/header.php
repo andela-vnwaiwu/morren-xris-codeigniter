@@ -26,6 +26,7 @@
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li><a href="<?php echo base_url(); ?>admin">Dashboard</a></li>
               <li><a href="<?php echo base_url(); ?>admin/upload">UPLOAD</a></li>
+              <li><a href="<?php echo base_url(); ?>admin/gallerycategories">GALLERY</a></li>
               <li><a href="<?php echo base_url(); ?>admin/auth/logout">LOGOUT</a></li>
             </ul>
           </div>

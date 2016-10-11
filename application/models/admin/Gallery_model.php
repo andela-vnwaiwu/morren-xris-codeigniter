@@ -5,7 +5,8 @@
 
     // variables corresponding to the column names in the database
     public $title;
-    public $path;
+    public $imagepath;
+    public $gallerycategoryid;
     public $id;
 
     public function __construct() {
@@ -20,9 +21,10 @@
       return $query->result();
     }
 
-    public function set_image($path, $title) {
-      $this->path = $path;
+    public function set_image($imagepath, $title) {
+      $this->imagepath = $imagepath;
       $this->title = $title;
+      $this->gallerycategoryid = 1;
       $this->db->insert('gallery', $this);
     }
   }

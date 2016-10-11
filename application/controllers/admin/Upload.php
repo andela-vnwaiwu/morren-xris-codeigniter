@@ -6,52 +6,42 @@ class Upload extends BackendController {
   public function __construct() {
     parent::__construct();
     $this->load->helper(array('form', 'url'));
+    // load the cloudinary dummy library
+    $this->load->library('cloudinarylib');
   }
 
   public function index() {
-    parent::checkLoginStatus();
+    $check_user = parent::checkLoginStatus();
+    if($check_user == TRUE) {
+      $data['title'] = ucfirst('Upload'); // Capitalize the first letter
 
-    $data['title'] = ucfirst('Upload'); // Capitalize the first letter
-
-    $this->load->view('admin/templates/header', $data);
-    $this->load->view('admin/pages/upload', array('error' => ' ' ));
-    $this->load->view('admin/templates/footer');
+      $this->load->view('admin/templates/header', $data);
+      $this->load->view('admin/pages/upload', array('error' => ' ' ));
+      $this->load->view('admin/templates/footer');
+    } else {
+      redirect('admin/auth');
+    }
+    
   }
 
   public function do_upload() {
-    $config['upload_path']          = './images/gallery/';
-    $config['allowed_types']        = 'gif|jpg|png';
-    $config['max_size']             = 1024;
-    $config['max_width']            = 1024;
-    $config['max_height']           = 768;
-
     $data['title'] = 'Upload Status';
-
-    $this->load->library('upload', $config);
+  
+    $title = $_POST['title'];
+    $upload_file = $this->cloudinarylib->upload($_FILES["filename"]["tmp_name"],
+      array(
+        "crop" => "limit", "width" => "1024", "height" => "768"
+      ));
+    $path = $upload_file['secure_url'];
     $this->load->model('admin/gallery_model', '', TRUE);
+    $this->gallery_model->set_image($path, $title);
 
-    $field_name = 'filename';
+    $data['imagepath'] = $path;
+    $data['imagename'] = $title;
 
-    if ( ! $this->upload->do_upload($field_name)) {
-      $error = array('error' => $this->upload->display_errors());
-
-      $this->load->view('admin/templates/header', $data);
-      $this->load->view('admin/pages/upload', $error);
-      $this->load->view('admin/templates/footer');
-
-    } else {
-
-      $data = array('upload_data' => $this->upload->data());
-      $title = $_POST['title'];
-      $filename = $this->upload->data('file_name');
-      $path = base_url(). 'images/gallery/' . $filename;
-
-      $this->gallery_model->set_image($path, $title);
-
-      $this->load->view('admin/templates/header', $data);
-      $this->load->view('admin/pages/upload_success', $data);
-      $this->load->view('admin/templates/footer');
-    }
+    $this->load->view('admin/templates/header', $data);
+    $this->load->view('admin/pages/upload_success', $data);
+    $this->load->view('admin/templates/footer');
   }
 
 }
