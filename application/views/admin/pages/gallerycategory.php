@@ -12,7 +12,7 @@
     <div id="gallery_category_list">
       <div class="row">
         <?php if(isset($message)) { ?>
-          <p class="message"><?php echo $message; ?></p>
+          <p class="message center-align"><?php echo $message; ?></p>
         <?php } ?>
         <?php if(! $query) { ?>
             <p class="flow-text center-align">Sorry... you have not created a category yet. Click the button below to create one</p>

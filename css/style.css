@@ -151,3 +151,12 @@ button {
     width: 50%;
     margin: auto;
 }
+
+.message {
+    font-size: 10px;
+}
+
+.center-div {
+    width: 50%;
+    margin: auto;
+}

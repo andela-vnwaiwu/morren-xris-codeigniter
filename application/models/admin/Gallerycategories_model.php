@@ -37,12 +37,19 @@
     }
 
     public function create_category($name, $description) {
-      $data = array (
-        'name' => $name,
-        'description' => $description
-      );
-      $this->db->insert('gallerycategory', $data);
-      return $data;
+      $this->db->where('name', $name);
+      $query = $this->db->get('gallerycategory');
+      if($query){
+        return $name;
+      } else {
+        $data = array (
+          'name' => $name,
+          'description' => $description
+        );
+        $this->db->insert('gallerycategory', $data);
+        return $data;
+      }
+      
     }
 
     public function delete_category($id) {

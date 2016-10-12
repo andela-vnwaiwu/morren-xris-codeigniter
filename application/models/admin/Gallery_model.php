@@ -21,10 +21,10 @@
       return $query->result();
     }
 
-    public function set_image($imagepath, $title) {
+    public function set_image($imagepath, $title, $categoryid) {
       $this->imagepath = $imagepath;
       $this->title = $title;
-      $this->gallerycategoryid = 1;
+      $this->gallerycategoryid = $categoryid;
       $this->db->insert('gallery', $this);
     }
   }

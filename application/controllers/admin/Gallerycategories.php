@@ -37,8 +37,15 @@ class Gallerycategories extends BackendController {
       } else {
         $name = $this->input->post('name');
         $description = $this->input->post('description');
-        $this->gallerycategories_model->create_category($name, $description);
-        redirect('admin/gallerycategories');
+        $query = $this->gallerycategories_model->create_category($name, $description);
+        if($query === $name) {
+          $data['message'] = 'A category with that name already exists';
+          $this->load->view('admin/templates/header', $data);
+          $this->load->view('admin/pages/gallerycategory', $data);
+          $this->load->view('admin/templates/footer');
+        }else{
+          redirect('admin/gallerycategories');
+        }
       }
     } else {
       redirect('admin/gallerycategories');
