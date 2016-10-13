@@ -56,4 +56,18 @@
       $this->db->where('id', $id);
       $this->db->delete('gallerycategory');
     }
+
+    public function set_active($id) {
+      $this->db->where('active','true');
+      $query = $this->db->get('gallerycategory');
+      if($query) {
+        $this->db->set('active', 'false');
+        $this->db->update('gallerycategory');
+      }
+      $this->db->set('active', 'true');
+      $this->db->where('id', $id);
+      $this->db->update('gallerycategory');
+
+
+    }
   }

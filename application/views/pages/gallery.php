@@ -7,21 +7,20 @@
   <div class="container">
     <div class="row">
       <h3 class="center-align"> Gallery </h3>
-      <p class="text-justify flow-text">
-        Here are some of the wonderful things on offer at Morren-Xris Hotels. We ensure that our customers
-        always get the best.
+      <p class="center-align flow-text">
+        Have a feel of what we offer at morren-xris. Your satisfaction is our priority!
       </p>
     </div>
     <div class="row">
-      <?php
-        // Display each images queried from the database
-        foreach ($query as $row) {
-          echo "<div class=\"col m3 s12 gallery\">";
-          echo "<img class=\"materialboxed\" width=\"250\""; 
-          echo 'src="' , $row->path,'" alt="', $row->title, '" />';
-          echo "</div>";
-        }
-      ?>
+      <?php if(empty($query)) { ?>
+              <p class="flow-text center-align">Images are coming soon...</p>
+          <?php } else {?>
+        <?php foreach($query as $row) { ?>
+        <div class="col m3 s12 gallery">
+            <img class="materialboxed" width="250" height="200" src="<?php echo $row->imagepath; ?>" alt="<?php echo $row->title; ?>" />
+        </div>
+        <?php } ?>
+      <?php } ?>
     </div>
   </div>
 </main>

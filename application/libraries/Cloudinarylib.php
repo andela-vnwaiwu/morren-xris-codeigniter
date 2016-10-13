@@ -29,4 +29,9 @@ class Cloudinarylib {
     public function upload($filename, $options) {
         return \Cloudinary\Uploader::upload($filename, $options);
     }
+
+    public function delete($public_id) {
+        $delete = new Cloudinary\Api;
+        return $delete->delete_resources($public_id, $options=array());
+    }
 }

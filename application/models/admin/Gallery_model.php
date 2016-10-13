@@ -13,11 +13,10 @@
       // Call the CI_Model constructor
       parent::__construct();
     }
-    // gets the 20 latest images path stored in the database.
-    public function get_all_images() {
-      $this->db->select('*');
-      $this->db->order_by('created', 'DESC');
-      $query = $this->db->get('gallery', 20);
+    // gets the images path stored in the database for a category.
+    public function get_image_by_category($gallerycategoryid) {
+      $this->db->where('gallerycategoryid', $gallerycategoryid);
+      $query = $this->db->get('gallery');
       return $query->result();
     }
 
@@ -27,4 +26,15 @@
       $this->gallerycategoryid = $categoryid;
       $this->db->insert('gallery', $this);
     }
+
+    public function get_image($id) {
+      $this->db->where('id', $id);
+      $query = $this->db->get('gallery', 1);
+      return $query->row();
+    }
+    public function delete_image($id) {
+      $this->db->where('id', $id);
+      $this->db->delete('gallery');
+    }
+     
   }

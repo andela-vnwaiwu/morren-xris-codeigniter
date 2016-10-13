@@ -7,7 +7,9 @@ class Gallerycategories extends BackendController {
     parent::__construct();
     $this->load->helper(array('form', 'url'));
     $this->load->library('form_validation');
+    $this->load->library('cloudinarylib');
     $this->load->model('admin/gallerycategories_model', '', TRUE);
+    $this->load->model('admin/gallery_model', '', TRUE);
     $this->form_validation->set_rules('name', 'name', 'required');
     $this->form_validation->set_rules('description', 'description', 'required');
     if(! parent::checkLoginStatus()) {
@@ -80,5 +82,41 @@ class Gallerycategories extends BackendController {
     $data['title'] = ucfirst('Delete category');
     $this->gallerycategories_model->delete_category($id);
     redirect('admin/gallerycategories');
+  }
+
+  public function delete_image($id) {
+    $data['title'] = ucfirst('Delete Image');
+    $query = $this->gallery_model->get_image($id);
+    if(isset($query)) {
+      $categoryid = $query->gallerycategoryid;
+      $imagepath = $query->imagepath;
+      $image = explode('/', $imagepath);
+      $image_name = end($image);
+      $public_id = explode('.', $image_name)[0];
+      $this->cloudinarylib->delete($public_id);
+      $this->gallery_model->delete_image($id);
+      redirect('admin/gallerycategories/get_category_images/'.$categoryid);
+    }  
+    
+  }
+
+  public function set_active($id) {
+    $this->gallerycategories_model->set_active($id);
+    $data['title'] = ucfirst('gallery categories');
+    $data['query'] = $this->gallerycategories_model->get_all_categories();
+    $data['message'] = 'You have made the category active';
+    
+    $this->load->view('admin/templates/header', $data);
+    $this->load->view('admin/pages/gallerycategory', $data);
+    $this->load->view('admin/templates/footer');
+  }
+
+  public function get_category_images($id) {
+    $data['title'] = ucfirst('Images');
+    $data['query'] = $this->gallery_model->get_image_by_category($id);
+    
+    $this->load->view('admin/templates/header', $data);
+    $this->load->view('admin/pages/categoryimages', $data);
+    $this->load->view('admin/templates/footer');
   }
 }
