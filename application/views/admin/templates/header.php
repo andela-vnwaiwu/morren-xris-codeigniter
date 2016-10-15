@@ -12,7 +12,7 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
      <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/sweetalert.css">
-    <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/style.css">
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/admin/style.css">
 
     <script type="text/javascript" src="<?php echo base_url(); ?>js/jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>js/materialize.min.js"></script>
@@ -39,4 +39,17 @@
         </div>
       </nav>
     </header>
-    <main>
+    <main> 
+      <ul id="slide-out" class="side-nav fixed">
+            <li>
+                <div class="userView">
+                    <img class="background" src="">
+                    <a href="#!name"><span class="white-text name"></span></a>
+                    <a href="#!email"><span class="white-text email"></span></a>
+                </div>
+            </li>
+            <li><a class="modal-trigger waves-effect waves-light" href="<?php echo base_url(); ?>admin">DASHBOARD</a></li>
+            <li><a class="modal-trigger waves-effect waves-light" href="<?php echo base_url(); ?>admin/upload">UPLOAD AN IMAGE</a></li>
+            <li><a class="modal-trigger waves-effect waves-light" href="<?php echo base_url(); ?>admin/gallerycategories">GALLERY CATEGORIES</a></li>
+            <li><a class="modal-trigger waves-effect waves-light" href="<?php echo base_url(); ?>admin/auth/logout">LOGOUT</a></li>
+        </ul>
