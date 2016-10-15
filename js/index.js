@@ -43,6 +43,14 @@ $(document).ready(function() {
     $('#create_category').addClass('hidden');
     $('#gallery_category_list').removeClass('hidden');
   });
+   $('#articleposition').on('click', function() {
+      $('#create_position').removeClass('hidden');
+      $('#article_position_list').addClass('hidden');
+    });
+  $('#category-back').on('click', function() {
+    $('#create_position').addClass('hidden');
+    $('#article_position_list').removeClass('hidden');
+  });
   $('.publish').on('click', function() {
     var categoryId = $(this).data('categoryId');
     console.log(categoryId);

@@ -48,8 +48,11 @@
                     <a href="#!email"><span class="white-text email"></span></a>
                 </div>
             </li>
-            <li><a class="modal-trigger waves-effect waves-light" href="<?php echo base_url(); ?>admin">DASHBOARD</a></li>
-            <li><a class="modal-trigger waves-effect waves-light" href="<?php echo base_url(); ?>admin/upload">UPLOAD AN IMAGE</a></li>
-            <li><a class="modal-trigger waves-effect waves-light" href="<?php echo base_url(); ?>admin/gallerycategories">GALLERY CATEGORIES</a></li>
-            <li><a class="modal-trigger waves-effect waves-light" href="<?php echo base_url(); ?>admin/auth/logout">LOGOUT</a></li>
+            <li><a class="waves-effect waves-light" href="<?php echo base_url(); ?>admin">DASHBOARD</a></li>
+            <li><a class="waves-effect waves-light" href="<?php echo base_url(); ?>admin/upload">UPLOAD AN IMAGE</a></li>
+            <li><a class="waves-effect waves-light" href="<?php echo base_url(); ?>admin/article">CREATE AN ARTICLE</a></li>
+            <li><a class="waves-effect waves-light" href="<?php echo base_url(); ?>admin/gallerycategories">GALLERY CATEGORIES</a></li>
+            <li><a class="waves-effect waves-light" href="<?php echo base_url(); ?>admin/articleposition">ARTICLE POSITION</a></li>
+            <li><a class="waves-effect waves-light" href="<?php echo base_url(); ?>admin/auth/logout">LOGOUT</a></li>
+            <li><a class="waves-effect waves-light" href="<?php echo base_url(); ?>">Visit the front Page</a></li>
         </ul>

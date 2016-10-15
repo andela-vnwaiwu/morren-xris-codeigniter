@@ -37,19 +37,17 @@
     }
 
     public function create_category($name, $description) {
+      $this->db->select('*');
       $this->db->where('name', $name);
       $query = $this->db->get('gallerycategory');
-      if($query){
-        return $name;
-      } else {
-        $data = array (
-          'name' => $name,
-          'description' => $description
-        );
-        $this->db->insert('gallerycategory', $data);
-        return $data;
+      if($query->result()){
+        throw new Exception("A category already exists");
       }
-      
+      $data = array (
+        'name' => $name,
+        'description' => $description
+      );
+      $this->db->insert('gallerycategory', $data);      
     }
 
     public function delete_category($id) {

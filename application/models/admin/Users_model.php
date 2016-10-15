@@ -27,6 +27,15 @@
       return $query->result();
     }
 
+    public function user_info($email) {
+      $this->db->select('*');
+      $this->db->where('email', $email );
+      $this->db->where('role', 'admin');
+      $query = $this->db->get('users');
+
+      return $query->row();
+    }
+
     // inserts a new user into the database
     public function set_user($firstname, $lastname, $username, $password, $email) {
 
