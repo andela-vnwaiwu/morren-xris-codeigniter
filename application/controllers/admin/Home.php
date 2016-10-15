@@ -7,22 +7,17 @@
     
     public function __construct() {
       parent::__construct();
+      if(! parent::checkLoginStatus()) {
+        redirect('admin/auth');
+      }
     }
 
     public function index() {
-      $check_user = parent::checkLoginStatus();
-      if($check_user == TRUE) {
-        $data['title'] = 'Admin';
-
-        $this->load->helper('url');
-        $this->load->view('admin/templates/header', $data);
-        $this->load->view('admin/pages/gallerycategory');
-        $this->load->view('admin/templates/footer'); 
-      } else {
-        redirect('admin/auth');
-      }
-
-      
+      $data['title'] = ucfirst('dashboard');
+      $this->load->helper('url');
+      $this->load->view('admin/templates/header', $data);
+      $this->load->view('admin/pages/dashboard');
+      $this->load->view('admin/templates/footer');
     }
 
   }

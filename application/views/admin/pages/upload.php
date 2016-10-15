@@ -3,7 +3,6 @@
     $('select').material_select();
   });
 </script>
-<main>
   <div class="container">
     <h3 class="center-align">Image Upload</h3>
     <p class="flow-text center-align">Select an image to upload and click the submit button to upload</p>
@@ -51,4 +50,3 @@
       </form>
     </div>
   </div>
-</main>
