@@ -1,7 +1,7 @@
   <div class="container">
     <div class="row">
       <h3 class="center-align">Welcome to Morren-Xris Hotels!</h3>
-      <p class="center-align flow-text">Enter the login details to go view dashboard</p>
+      <p class="center-align flow-text">Enter the login details to view the dashboard</p>
     </div>
     <div class="login-form z-depth-3">
       <form method="post" action="<?php echo base_url(); ?>admin/auth/login">

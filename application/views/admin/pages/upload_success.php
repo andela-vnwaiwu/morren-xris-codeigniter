@@ -1,21 +1,15 @@
 <div class="container">
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $("#back").on("click", function() {
-        window.location.href = "http://localhost/morren/admin/upload";
-      });
-    });
-  </script>
-  <h3>Your file was successfully uploaded!</h3>
+  <h4>Upload Status</h4>
+  <?php if(isset($message)) { ?>
+    <p class="message center-align"><?php echo $message; ?></p>
+  <?php } ?>
+  <div class="row">
+  
+  <?php if(isset($imagepath)) { ?>
+    <div class="image"><img class="materialboxed" src="<?php echo $imagepath; ?>" width="300"/>
+  </div>
+  <?php } ?>
 
-  <ul>
-    <?php foreach ($upload_data as $item => $value):?>
-    <li><?php echo $item;?>: <?php echo $value;?></li>
-    <?php endforeach; ?>
-  </ul>
-
-  <p><?php echo anchor('upload', 'Upload Another File!'); ?></p>
-    <button class="btn waves-effect waves-light" id="back" type="submit" name="back">Back to uploads
-      <i class="material-icons right">back</i>
-    </button>
+  <p><a href="<?php echo base_url('admin/upload'); ?>">Upload Another File!</a></p>
+    <a class="btn waves-effect waves-light" href="<?php base_url('admin/'); ?>">Back to Dashboard<i class="material-icons right">back</i></a>
   </div>

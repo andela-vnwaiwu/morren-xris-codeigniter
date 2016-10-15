@@ -5,18 +5,21 @@
 
     // variables corresponding to the column names in the database
     public $title;
-    public $path;
+    public $imagepath;
     public $id;
 
     public function __construct() {
       // Call the CI_Model constructor
       parent::__construct();
     }
-    // gets the 20 latest images path stored in the database.
-    public function get_all_images() {
+    // gets the 20 latest images path stored in the database by the active category.
+    public function get_active_category() {
       $this->db->select('*');
-      $this->db->order_by('created', 'DESC');
-      $query = $this->db->get('gallery', 20);
+      $this->db->from('gallery');
+      // $this->db->from('gallerycategory');
+      $this->db->join('gallerycategory', 'gallerycategory.id = gallery.gallerycategoryid');
+      $this->db->where('active', 'true');
+      $query = $this->db->get();
       return $query->result();
     }
 
