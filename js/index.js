@@ -33,3 +33,31 @@ $('.prev').click(function() {
   }
   cycleItems();
 });
+
+$(document).ready(function() {
+  $('#gallerycategory').on('click', function() {
+      $('#create_category').removeClass('hidden');
+      $('#gallery_category_list').addClass('hidden');
+    });
+  $('#category-back').on('click', function() {
+    $('#create_category').addClass('hidden');
+    $('#gallery_category_list').removeClass('hidden');
+  });
+  $('.publish').on('click', function() {
+    var categoryId = $(this).data('categoryId');
+    console.log(categoryId);
+    $.get('set_active/' + categoryId, function() {
+      swal('Good job', 'You have successfully set a new active gallery', 'success');
+      setTimeout(location.reload(), 2000);
+    });
+  });
+  $('.delete-button').on('click', function() {
+    var imageId = $(this).data('imageId');
+    console.log(imageId);
+    // $.get('delete_image/' + imageId, function() {
+    //   swal('Good job', 'You have successfully deleted the image', 'success');
+    //   setTimeout(location.reload(), 2000);
+    // });
+  });
+  $('.modal-trigger').leanModal();
+});

@@ -21,29 +21,24 @@ class Auth extends BackendController {
 	}
 	// 	checks if the admin details are correct from the database'
   public function login() {
-    // if($this->input->post('submit') == TRUE) {
-      $email = $_POST['email'];
-      $password = $_POST['password'];
-      $user = $this->users_model->get_user($email, $password);
-      if (count($user) == 1){
-        $user_info = array(
-          'firstname'  => $user[0]->firstname,
-          'email'     => $user[0]->email,
-          'logged_in' => TRUE
-        );
-        $this->session->set_userdata($user_info);
-        redirect('admin/');
-      } else {
-        redirect('admin/auth');
-      }
-
-    // }
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $user = $this->users_model->get_user($email, $password);
+    if (count($user) == 1) {
+      $user_info = array(
+        'firstname'  => $user[0]->firstname,
+        'email'     => $user[0]->email,
+        'logged_in' => TRUE
+      );
+      $this->session->set_userdata($user_info);
+      redirect('admin/');
+    } else {
+      redirect('admin/auth');
+    }
   }
 
   public function logout() {
     $this->session->sess_destroy();
-    $this->load->view('admin/templates/header');
-    $this->load->view('admin/pages/auth');
-    $this->load->view('admin/templates/footer');
+    redirect('admin/auth');
   }
 }
