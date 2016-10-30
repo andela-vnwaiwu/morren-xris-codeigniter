@@ -10,7 +10,7 @@
   <div class="container">
     <div class="row">
       <div class="col s12 m6 l6 push-l6">
-        <img class="responsive-img hoverable z-depth-2" src="images/room.jpg">
+        <img class="responsive-img hoverable z-depth-1" src="images/room.jpg">
       </div>
       <div class="col s12 m6 l6 pull-l6">
         <?php if (isset($query1)) { ?>
@@ -27,7 +27,7 @@
     </div>
     <div class="row">
       <div class="col s12 m6 l6">
-        <img class="responsive-img hoverable z-depth-2" src="images/food.jpg">
+        <img class="responsive-img hoverable z-depth-1" src="images/food.jpg">
       </div>
       <div class="col s12 m6 l6">
         <?php if (isset($query2)) { ?>
@@ -43,13 +43,13 @@
     </div>
     <div class="row">
       <div class="col s12 m4 l4 ">
-        <img class="responsive-img z-depth-2" src="images/gym.jpg">
+        <img class="responsive-img z-depth-1" src="images/entrance-gate3.jpg">
       </div>
       <div class="col s12 m4 l4">
-        <img class="responsive-img z-depth-2" src="images/hall.jpg">
+        <img class="responsive-img z-depth-1" src="images/pool1.jpg">
       </div>
       <div class="col s12 m4 l4">
-        <img class="responsive-img z-depth-2" src="images/bar1.jpg">
+        <img class="responsive-img z-depth-1" src="images/bar3.jpg">
       </div>
     </div>
   </div>
