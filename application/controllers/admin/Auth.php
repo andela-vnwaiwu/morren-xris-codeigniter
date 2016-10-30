@@ -21,8 +21,8 @@ class Auth extends BackendController {
 	}
 	// 	checks if the admin details are correct from the database'
   public function login() {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $email = parent::test_input($this->input->post('email'));
+    $password = parent::test_input($this->input->post('password'));
     $user = $this->users_model->get_user($email, $password);
     if (count($user) == 1) {
       $user_info = array(

@@ -37,16 +37,17 @@ class Gallerycategories extends BackendController {
         $this->load->view('admin/pages/gallerycategory', $data);
         $this->load->view('admin/templates/footer');
       } else {
-        $name = $this->input->post('name');
-        $description = $this->input->post('description');
-        $query = $this->gallerycategories_model->create_category($name, $description);
-        if($query === $name) {
-          $data['message'] = 'A category with that name already exists';
+        $name = parent::test_input($this->input->post('name'));
+        $description = parent::test_input($this->input->post('description'));
+        try {
+          $this->gallerycategories_model->create_category($name, $description);
+          redirect('admin/gallerycategories');
+        }
+        catch(Exception $e) {
+          $data['message'] = $e->getMessage();
           $this->load->view('admin/templates/header', $data);
           $this->load->view('admin/pages/gallerycategory', $data);
           $this->load->view('admin/templates/footer');
-        }else{
-          redirect('admin/gallerycategories');
         }
       }
     } else {
@@ -65,8 +66,8 @@ class Gallerycategories extends BackendController {
         $this->load->view('admin/templates/footer');
         
       } else {
-        $name = $this->input->post('name');
-        $description = $this->input->post('description');
+        $name = parent::test_input($this->input->post('name'));
+        $description = parent::test_input($this->input->post('description'));
         $this->gallerycategories_model->update_category($id, $name, $description); 
         redirect('admin/gallerycategories');
       }  
