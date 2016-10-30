@@ -37,8 +37,8 @@ class Article extends BackendController {
         $this->load->view('admin/pages/article', $data);
         $this->load->view('admin/templates/footer');
       } else {
-        $title = $this->input->post('title');
-        $content = $this->input->post('content');
+        $title = parent::test_input($this->input->post('title'));
+        $content = parent::test_input($this->input->post('content'));
         $positionid = $this->input->post('position');
         $user = parent::checkLoginStatus();
         $userid = $user->id;
@@ -68,8 +68,8 @@ class Article extends BackendController {
         $this->load->view('admin/templates/footer');
         
       } else {
-        $title = $this->input->post('title');
-        $content = $this->input->post('content');
+        $title = parent::test_input($this->input->post('title'));
+        $content = parent::test_input($this->input->post('content'));
         $positionid = $this->input->post('position');
         $user = parent::checkLoginStatus();
         $userid = $user->id;

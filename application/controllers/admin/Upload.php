@@ -39,7 +39,7 @@ class Upload extends BackendController {
         $this->load->view('admin/pages/upload', $data);
         $this->load->view('admin/templates/footer');
       } else {
-        $title = $_POST['title'];
+        $title = parent::test_input($this->input->post('title'));
         $categoryid = $_POST['category'];
         $allowedTypes = array(IMAGETYPE_PNG, IMAGETYPE_JPEG, IMAGETYPE_GIF);
         $detectedType = exif_imagetype($_FILES['filename']['tmp_name']);

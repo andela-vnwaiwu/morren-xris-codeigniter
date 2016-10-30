@@ -36,7 +36,7 @@ class Articleposition extends BackendController {
         $this->load->view('admin/pages/articleposition', $data);
         $this->load->view('admin/templates/footer');
       } else {
-        $name = $this->input->post('name');
+        $name = parent::test_input($this->input->post('name'));
         try {
           $this->articleposition_model->create_position($name);
           redirect('admin/articleposition');
@@ -64,25 +64,25 @@ class Articleposition extends BackendController {
         $this->load->view('admin/templates/footer');
         
       } else {
-        $name = $this->input->post('name');
+        $name = parent::test_input($this->input->post('name'));
         $this->articleposition_model->update_position($id, $name); 
         redirect('admin/articleposition');
       }  
     } else {
-      $data['formdata'] = $this->articleposition_model->get_category($id);
+      $data['formdata'] = $this->articleposition_model->get_position($id);
       $this->load->view('admin/templates/header', $data);
       $this->load->view('admin/pages/editposition`');
       $this->load->view('admin/templates/footer');
     }
   }
 
-  public function delete_category($id) {
-    $data['title'] = ucfirst('Delete category');
-    $this->articleposition_model->delete_category($id);
-    redirect('admin/Articlepositions');
-  }
+  // public function delete_category($id) {
+  //   $data['title'] = ucfirst('Delete category');
+  //   $this->articleposition_model->delete_category($id);
+  //   redirect('admin/Articlepositions');
+  // }
 
-  public function delete_image($id) {
+  public function delete_article($id) {
     $data['title'] = ucfirst('Delete Image');
     $query = $this->Article_model->get_image($id);
     if(isset($query)) {
@@ -99,13 +99,15 @@ class Articleposition extends BackendController {
   }
 
   public function set_active($id) {
-    $this->articleposition_model->set_active($id);
+    $article = $this->article_model->get_article($id);
+    $positionid = $article->articlepositionid;
+    $this->articleposition_model->set_active($id, $positionid);
     $data['title'] = ucfirst('Article positions');
     $data['query'] = $this->articleposition_model->get_all_positions();
     $data['message'] = 'You have made the category active';
     
     $this->load->view('admin/templates/header', $data);
-    $this->load->view('admin/pages/Articlecategory', $data);
+    $this->load->view('admin/pages/positionarticles', $data);
     $this->load->view('admin/templates/footer');
   }
 
