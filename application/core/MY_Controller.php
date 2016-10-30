@@ -32,7 +32,16 @@
     //redirect user to login page if not logged in
     protected function checkLoginStatus() {
       if ($this->session->has_userdata('firstname')) {
-       return TRUE; 
+        $email = $this->session->userdata('email');
+        $user = $this->users_model->user_info($email);
+        return $user; 
       } 
+    }
+
+    static function test_input($data) {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
     }
   }
