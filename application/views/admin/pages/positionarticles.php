@@ -34,7 +34,7 @@
                     <?php if ($row->active == 'true'){ ?>
                     <a class="btn-floating disabled blue" title="Set as active"><i class="material-icons">publish</i></a>
                     <?php } else { ?>
-                    <a class="btn-floating green publish" data-category-id="<?php echo $row->id ?>" title="Set as active"><i class="material-icons">publish</i></a>
+                    <a class="btn-floating green set-active"  data-article-id="<?php echo $row->id ?>" title="Set as active"><i class="material-icons">publish</i></a>
                     <?php } ?>
                     <a class="btn-floating orange" href="<?php echo base_url('admin/article/edit_article/'. $row->id); ?>" title="Edit Article"><i class="material-icons">mode_edit</i></a>
                     <a class="btn-floating red modal-trigger" href="#<?php echo $row-> id; ?>" title="Delete category"><i class="material-icons">delete_forever</i></a>

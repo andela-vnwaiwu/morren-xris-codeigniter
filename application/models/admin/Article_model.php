@@ -40,8 +40,16 @@
     public function get_article($id) {
       $this->db->where('id', $id);
       $query = $this->db->get('post', 1);
-      return $query->result();
+      return $query->row();
     }
+
+    public function get_active_article($positionid) {
+      $this->db->where('active', 'true');
+      $this->db->where('articlepositionid', $positionid);
+      $query = $this->db->get('post', 1);
+      return $query->row();
+    }
+
     public function delete_article($id) {
       $this->db->where('id', $id);
       $this->db->delete('post');

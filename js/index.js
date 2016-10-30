@@ -54,18 +54,23 @@ $(document).ready(function() {
   $('.publish').on('click', function() {
     var categoryId = $(this).data('categoryId');
     console.log(categoryId);
-    $.get('set_active/' + categoryId, function() {
+    $.get(BASE_URL + 'admin/gallerycategories/set_active/' + categoryId, function() {
       swal('Good job', 'You have successfully set a new active gallery', 'success');
+      setTimeout(location.reload(), 2000);
+    });
+  });
+  $('.set-active').on('click', function() {
+    var articleId = $(this).data('articleId');
+    console.log(articleId);
+    $.get(BASE_URL + 'admin/articleposition/set_active/' + articleId, function() {
+      // console.log('I need answers')
+      swal('Good job', 'You have successfully set a new active article', 'success');
       setTimeout(location.reload(), 2000);
     });
   });
   $('.delete-button').on('click', function() {
     var imageId = $(this).data('imageId');
     console.log(imageId);
-    // $.get('delete_image/' + imageId, function() {
-    //   swal('Good job', 'You have successfully deleted the image', 'success');
-    //   setTimeout(location.reload(), 2000);
-    // });
   });
   $('.modal-trigger').leanModal();
 });

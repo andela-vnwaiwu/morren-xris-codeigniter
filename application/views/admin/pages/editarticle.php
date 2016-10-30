@@ -7,17 +7,17 @@
     <div id="edit_category" class="row">
     <h4 class="center-align">Edit Article</h3>
      <?php echo validation_errors(); ?>
-     <?php foreach ($formdata as $form) { ?>
-    <?php echo form_open('admin/article/edit_article/'. $form->id); ?>
+     <?php if(!empty($formdata)) { ?>
+    <?php echo form_open('admin/article/edit_article/'. $formdata->id); ?>
      <div class="row">
             <div class="input-field col s12">
-                <input placeholder="Title" id="title" name="title" type="text" class="validate" value="<?php echo $form->title; ?>">
+                <input placeholder="Title" id="title" name="title" type="text" class="validate" value="<?php echo $formdata->title; ?>">
                 <label for="title">Title</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <textarea class="materialize-textarea" placeholder="Content" id="content" name="content" type="text" class="validate"><?php echo $form->content; ?></textarea>
+                <textarea class="materialize-textarea" placeholder="Content" id="content" name="content" type="text" class="validate"><?php echo $formdata->content; ?></textarea>
                 <label for="content">Content</label>
             </div>
         </div>

@@ -26,6 +26,14 @@
       return $query->result();
     }
 
+    // get the position id of the article specified by its name
+    public function get_position_name($name) {
+      $this->db->select('*');
+      $this->db->where('name', $name);
+      $query = $this->db->get('articleposition');
+      return $query->row();
+    }
+
     public function update_position($id, $name) {
       $data = array(
         'name' => $name
@@ -45,6 +53,20 @@
         'name' => $name
       );
       $this->db->insert('articleposition', $data);
-      
+    }
+
+    public function set_active($id, $positionid) {
+      $this->db->where('articlepositionid', $positionid );
+      $this->db->where('active','true');
+      $query = $this->db->get('post');
+      if($query) {
+        $this->db->set('active', 'false');
+        $this->db->where('articlepositionid', $positionid );
+        $this->db->update('post');
+      }
+      $this->db->set('active', 'true');
+      $this->db->where('id', $id);
+      $this->db->where('articlepositionid', $positionid);
+      $this->db->update('post');
     }
   }
