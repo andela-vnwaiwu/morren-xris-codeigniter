@@ -13,12 +13,16 @@
         <img class="responsive-img hoverable z-depth-2" src="images/room.jpg">
       </div>
       <div class="col s12 m6 l6 pull-l6">
+        <?php if (isset($query1)) { ?>
+          <p class="text-justify flow-text"><?php echo $query1->content; ?> </p>
+        <?php } else { ?>
         <p class="text-justify flow-text">
-          <strong>Morren-Xris </strong>is a world class hotel located in Onitsha, one of the commercial cities of the south-east.
+          <strong>Morren-Xris </strong>is a world class hotel located in Amaokpala, one of the commercial cities of the south-east.
           It is a 5-star hotel offering quality and value added sevices. Its facilities are world-class and it is your
           home away from home. We also have other facilities to cater for your other needs like: bar, restaurant, pool, 
           conference halls etc.
         </p>
+        <?php } ?>
       </div>
     </div>
     <div class="row">
@@ -26,10 +30,15 @@
         <img class="responsive-img hoverable z-depth-2" src="images/food.jpg">
       </div>
       <div class="col s12 m6 l6">
-        <p class="text-justify flow-text">
-        Our services will make you feel at home. We will pamper you with nature's finest and best foods, drinks and hospitality.
-        Our staffs always ensure you are ease and help you get settled quickly. You might want to try out our freshly cooked meals
-        and chops. We always ensure out client's satisfaction and happiness.
+        <?php if (isset($query2)) { ?>
+          <p class="text-justify flow-text"><?php echo $query2->content; ?> </p>
+        <?php } else { ?>
+          <p class="text-justify flow-text">
+          Our services will make you feel at home. We will pamper you with nature's finest and best foods, drinks and hospitality.
+          Our staffs always ensure you are ease and help you get settled quickly. You might want to try out our freshly cooked meals
+          and chops. We always ensure out client's satisfaction and happiness.
+          </p>
+       <?php  } ?>
       </div>
     </div>
     <div class="row">
