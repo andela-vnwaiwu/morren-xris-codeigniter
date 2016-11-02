@@ -47,10 +47,17 @@
                     <a href="#!name"><span class="white-text name"></span></a>
                     <a href="#!email"><span class="white-text email"></span></a>
                     <a href="#!user"><img class="rounded-image profile" src="/images/avatar.png" />
+                    <?php if (!empty($user)) { ?>
+                      <div class="user-info">
+                        <a href="#!name"><span class="white-text name">Welcome <?php echo $user->firstname ?></span></a>
+                        <a href="#!email"><span class="white-text email"><?php echo $user->email ?></span></a>
+                      </div>
+                    <?php } else { ?>
                     <div class="user-info">
-                      <a href="#!name"><span class="white-text name">Welcome <?php echo $user->firstname ?></span></a>
-                      <a href="#!email"><span class="white-text email"><?php echo $user->email ?></span></a>
+                      <a href="#!name"><span class="white-text name">Welcome</span></a>
+                      <a href="#!email"><span class="white-text email">Login to continue</span></a>
                     </div>
+                    <?php } ?>
                 </div>
             </li>
             <li><a class="waves-effect waves-light white-text" href="<?php echo base_url(); ?>admin">DASHBOARD</a></li>
