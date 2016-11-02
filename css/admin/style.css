@@ -158,3 +158,25 @@ button {
     width: 50%;
     margin: auto;
 }
+
+#slide-out {
+    background-color: #412234;
+    overflow-y: hidden;
+}
+
+.side-nav a {
+    padding: none;
+    margin-left: 30px;
+}
+
+.side-nav li {
+    list-style: none;
+}
+
+.side-nav {
+    top: 0;
+    left: 0;
+}
+.user-info {
+    background-color: rgba(0, 0, 0, 0.5)
+}

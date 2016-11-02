@@ -17,6 +17,7 @@ class Articleposition extends BackendController {
   }
 
   public function index() {
+    $data['user'] = parent::checkLoginStatus();
     $data['title'] = ucfirst('positions'); // Capitalize the first letter
     $data['query'] = $this->articleposition_model->get_all_positions();
 
@@ -26,6 +27,7 @@ class Articleposition extends BackendController {
   }
 
   public function create_position() {
+    $data['user'] = parent::checkLoginStatus();
     $data['title'] = ucfirst('create position');
     $data['query'] = $this->articleposition_model->get_all_positions();
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -54,6 +56,7 @@ class Articleposition extends BackendController {
   }
 
   public function edit_position($id) {
+    $data['user'] = parent::checkLoginStatus();
     $data['title'] = ucfirst('edit position');
     if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
       if ($this->form_validation->run() == FALSE) {
@@ -76,13 +79,8 @@ class Articleposition extends BackendController {
     }
   }
 
-  // public function delete_category($id) {
-  //   $data['title'] = ucfirst('Delete category');
-  //   $this->articleposition_model->delete_category($id);
-  //   redirect('admin/Articlepositions');
-  // }
-
   public function delete_article($id) {
+    $data['user'] = parent::checkLoginStatus();
     $data['title'] = ucfirst('Delete Image');
     $query = $this->Article_model->get_image($id);
     if(isset($query)) {
@@ -99,6 +97,7 @@ class Articleposition extends BackendController {
   }
 
   public function set_active($id) {
+    $data['user'] = parent::checkLoginStatus();
     $article = $this->article_model->get_article($id);
     $positionid = $article->articlepositionid;
     $this->articleposition_model->set_active($id, $positionid);
@@ -112,6 +111,7 @@ class Articleposition extends BackendController {
   }
 
   public function get_position_articles($id) {
+    $data['user'] = parent::checkLoginStatus();
     $data['title'] = ucfirst('Articles');
     $data['query'] = $this->article_model->get_articles_by_position($id);
     

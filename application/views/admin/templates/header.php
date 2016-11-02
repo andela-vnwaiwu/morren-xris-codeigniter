@@ -43,16 +43,21 @@
       <ul id="slide-out" class="side-nav fixed">
             <li>
                 <div class="userView">
-                    <img class="background" src="">
+                    <img class="background" width="300" height="200" src="https://res.cloudinary.com/morren-xris-hotels/image/upload/v1478074841/tz7g14bnz9cxfgnykxrv.jpg">
                     <a href="#!name"><span class="white-text name"></span></a>
                     <a href="#!email"><span class="white-text email"></span></a>
+                    <a href="#!user"><img class="rounded-image profile" src="/images/avatar.png" />
+                    <div class="user-info">
+                      <a href="#!name"><span class="white-text name">Welcome <?php echo $user->firstname ?></span></a>
+                      <a href="#!email"><span class="white-text email"><?php echo $user->email ?></span></a>
+                    </div>
                 </div>
             </li>
-            <li><a class="waves-effect waves-light" href="<?php echo base_url(); ?>admin">DASHBOARD</a></li>
-            <li><a class="waves-effect waves-light" href="<?php echo base_url(); ?>admin/upload">UPLOAD AN IMAGE</a></li>
-            <li><a class="waves-effect waves-light" href="<?php echo base_url(); ?>admin/article">CREATE AN ARTICLE</a></li>
-            <li><a class="waves-effect waves-light" href="<?php echo base_url(); ?>admin/gallerycategories">GALLERY CATEGORIES</a></li>
-            <li><a class="waves-effect waves-light" href="<?php echo base_url(); ?>admin/articleposition">ARTICLE POSITION</a></li>
-            <li><a class="waves-effect waves-light" href="<?php echo base_url(); ?>admin/auth/logout">LOGOUT</a></li>
-            <li><a class="waves-effect waves-light" href="<?php echo base_url(); ?>">Visit the front Page</a></li>
+            <li><a class="waves-effect waves-light white-text" href="<?php echo base_url(); ?>admin">DASHBOARD</a></li>
+            <li><a class="waves-effect waves-light white-text" href="<?php echo base_url(); ?>admin/upload">UPLOAD AN IMAGE</a></li>
+            <li><a class="waves-effect waves-light white-text" href="<?php echo base_url(); ?>admin/article">CREATE AN ARTICLE</a></li>
+            <li><a class="waves-effect waves-light white-text" href="<?php echo base_url(); ?>admin/gallerycategories">GALLERY CATEGORIES</a></li>
+            <li><a class="waves-effect waves-light white-text" href="<?php echo base_url(); ?>admin/articleposition">ARTICLE POSITION</a></li>
+            <li><a class="waves-effect waves-light white-text" href="<?php echo base_url(); ?>admin/auth/logout">LOGOUT</a></li>
+            <li><a class="waves-effect waves-light white-text" href="<?php echo base_url(); ?>">Visit the front Page</a></li>
         </ul>

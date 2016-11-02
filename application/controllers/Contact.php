@@ -35,7 +35,7 @@ class Contact extends FrontendController {
       // load the email library 
       $this->load->library('email');
       $this->email->from($email);
-      $this->email->to('vonvikky@gmail.com');
+      $this->email->to('info@morren-xrishotels.com');
       $this->email->subject('Contact form submission');
       $this->email->message($first_name . " " . $last_name ." ". "in ". $state. " ". $country.  " wrote the following:" . "\n\n" . $body);
       $this->email->send();
