@@ -11,12 +11,12 @@
             </p>
           </div>
           <div class="col l4 s12">
-            <h5 class="white-text center-align">Site Map</h5>
-            <ul class="center-align pad-list">
-              <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Gallery</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Events</a></li>
+          <img class="z-depth-2 responsive-img" src="https://res.cloudinary.com/morren-xris-hotels/image/upload/v1478074841/tz7g14bnz9cxfgnykxrv.jpg"/>
+            <ul class="pad-list">
+              <li><a class="grey-text text-lighten-3" href="<?php echo base_url(); ?>">Home</a></li>
+              <li><a class="grey-text text-lighten-3" href="<?php echo base_url(); ?>about">About Us</a></li>
+              <li><a class="grey-text text-lighten-3" href="<?php echo base_url(); ?>gallery">Gallery</a></li>
+              <li><a class="grey-text text-lighten-3" href="<?php echo base_url(); ?>contact">Contact Us</a></li>
             </ul>
           </div>
           <div class="col l4 s12">

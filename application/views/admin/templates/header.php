@@ -16,6 +16,7 @@
 
     <script type="text/javascript" src="<?php echo base_url(); ?>js/jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>js/materialize.min.js"></script>
+    <script src="http://cdn.ckeditor.com/4.5.11/standard/ckeditor.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>js/countries.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>js/sweetalert.min.js"></script>
     <script>
@@ -24,11 +25,11 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>js/index.js"></script>
   </head>
   <body>
-    <header>
+    <header class="navbar-fixed">
       <nav class="lime lighten-2">
         <div class="container">
           <div class="nav-wrapper">
-            <a href="/morren-xris" class="brand-logo"> Morren-Xris </a>
+            <a href="/morren-xris" class="brand-logo"><img class="logo" src="https://res.cloudinary.com/morren-xris-hotels/image/upload/v1478103395/ogxxm9wbtwgkbax798r5.jpg"</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li><a href="<?php echo base_url(); ?>admin">Dashboard</a></li>
               <li><a href="<?php echo base_url(); ?>admin/upload">UPLOAD</a></li>

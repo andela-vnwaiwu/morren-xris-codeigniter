@@ -20,8 +20,11 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <textarea class="materialize-textarea" placeholder="Content" id="content" name="content" type="text" class="validate"></textarea>
+                <textarea placeholder="Content" id="content" name="content" type="text" class="validate"></textarea>
                 <label for="content">Content</label>
+                <script>
+                  CKEDITOR.replace( 'content' );
+                </script>
             </div>
         </div>
         <div class="row">
