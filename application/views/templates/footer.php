@@ -27,9 +27,9 @@
               <address class="white-text">Phone <phone>+234 803 307 2447</phone></address>
             </p>
             <ul>
-              <li><a class="white-text" href="#"><i class="small fa fa-facebook"></i> Facebook</a></li>
-              <li><a class="white-text" href="#"><i class="small fa fa-twitter"></i> Twitter</a></li>
-              <li><a class="white-text" href="#"><i class="small fa fa-instagram"></i> Instagram</a></li>
+              <li><a class="white-text" href="#"><i class="small fa fa-facebook" target="_blank"></i> Facebook</a></li>
+              <li><a class="white-text" href="https://twitter.com/morrenxrishotel" target="_blank"><i class="small fa fa-twitter"></i> Twitter</a></li>
+              <li><a class="white-text" href="https://instagram.com/morrenxrishotel" target="_blank"><i class="small fa fa-instagram"></i> Instagram</a></li>
             </ul>
           </div>
         </div>
