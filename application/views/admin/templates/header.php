@@ -41,7 +41,7 @@
       </nav>
     </header>
     <main> 
-      <ul id="slide-out" class="side-nav fixed">
+      <ul id="slide-out" class="side-nav">
             <li>
                 <div class="userView">
                     <img class="background" width="300" height="200" src="https://res.cloudinary.com/morren-xris-hotels/image/upload/v1478074841/tz7g14bnz9cxfgnykxrv.jpg">
@@ -69,3 +69,4 @@
             <li><a class="waves-effect waves-light white-text" href="<?php echo base_url(); ?>admin/auth/logout">LOGOUT</a></li>
             <li><a class="waves-effect waves-light white-text" href="<?php echo base_url(); ?>">Visit the front Page</a></li>
         </ul>
+        <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>

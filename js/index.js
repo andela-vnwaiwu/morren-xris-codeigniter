@@ -63,7 +63,6 @@ $(document).ready(function() {
     var articleId = $(this).data('articleId');
     console.log(articleId);
     $.get(BASE_URL + 'admin/articleposition/set_active/' + articleId, function() {
-      // console.log('I need answers')
       swal('Good job', 'You have successfully set a new active article', 'success');
       setTimeout(location.reload(), 2000);
     });
@@ -73,4 +72,5 @@ $(document).ready(function() {
     console.log(imageId);
   });
   $('.modal-trigger').leanModal();
+  $('.button-collapse').sideNav();
 });
