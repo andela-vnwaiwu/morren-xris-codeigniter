@@ -18,6 +18,7 @@ class Gallerycategories extends BackendController {
   }
 
   public function index() {
+    $data['user'] = parent::checkLoginStatus();
     $data['title'] = ucfirst('categories'); // Capitalize the first letter
     $data['query'] = $this->gallerycategories_model->get_all_categories();
 
@@ -27,6 +28,7 @@ class Gallerycategories extends BackendController {
   }
 
   public function create_category() {
+    $data['user'] = parent::checkLoginStatus();
     $data['title'] = ucfirst('create category');
     $data['query'] = $this->gallerycategories_model->get_all_categories();
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -56,6 +58,7 @@ class Gallerycategories extends BackendController {
   }
 
   public function edit_category($id) {
+    $data['user'] = parent::checkLoginStatus();
     $data['title'] = ucfirst('edit category');
     if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
       if ($this->form_validation->run() == FALSE) {
@@ -80,12 +83,14 @@ class Gallerycategories extends BackendController {
   }
 
   public function delete_category($id) {
+    $data['user'] = parent::checkLoginStatus();
     $data['title'] = ucfirst('Delete category');
     $this->gallerycategories_model->delete_category($id);
     redirect('admin/gallerycategories');
   }
 
   public function delete_image($id) {
+    $data['user'] = parent::checkLoginStatus();
     $data['title'] = ucfirst('Delete Image');
     $query = $this->gallery_model->get_image($id);
     if(isset($query)) {
@@ -102,6 +107,7 @@ class Gallerycategories extends BackendController {
   }
 
   public function set_active($id) {
+    $data['user'] = parent::checkLoginStatus();
     $this->gallerycategories_model->set_active($id);
     $data['title'] = ucfirst('gallery categories');
     $data['query'] = $this->gallerycategories_model->get_all_categories();
@@ -113,6 +119,7 @@ class Gallerycategories extends BackendController {
   }
 
   public function get_category_images($id) {
+    $data['user'] = parent::checkLoginStatus();
     $data['title'] = ucfirst('Images');
     $data['query'] = $this->gallery_model->get_image_by_category($id);
     

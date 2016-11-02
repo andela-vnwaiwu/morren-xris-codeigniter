@@ -20,6 +20,7 @@ class Upload extends BackendController {
   }
 
   public function index() {
+    $data['user'] = parent::checkLoginStatus();
     $data['title'] = ucfirst('Upload'); // Capitalize the first letter
     $data['categories'] = $this->gallerycategories_model->get_all_categories();
 
@@ -29,6 +30,7 @@ class Upload extends BackendController {
   }
 
   public function do_upload() {
+    $data['user'] = parent::checkLoginStatus();
     $data['title'] = 'Upload Status';
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       if($this->form_validation->run() == FALSE) {

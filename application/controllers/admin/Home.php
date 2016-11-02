@@ -13,6 +13,7 @@
     }
 
     public function index() {
+      $data['user'] = parent::checkLoginStatus();
       $data['title'] = ucfirst('dashboard');
       $this->load->helper('url');
       $this->load->view('admin/templates/header', $data);

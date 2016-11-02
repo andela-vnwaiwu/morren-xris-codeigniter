@@ -18,6 +18,7 @@ class Article extends BackendController {
   }
 
   public function index() {
+    $data['user'] = parent::checkLoginStatus();
     $data['title'] = ucfirst('Create Article'); // Capitalize the first letter
     $data['positions'] = $this->articleposition_model->get_all_positions();
 
@@ -27,6 +28,7 @@ class Article extends BackendController {
   }
 
   public function save_article() {
+    $data['user'] = parent::checkLoginStatus();
     $data['title'] = 'Saving Article';
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       if($this->form_validation->run() == FALSE) {
@@ -57,6 +59,7 @@ class Article extends BackendController {
   }
 
   public function edit_article($id) {
+    $data['user'] = parent::checkLoginStatus();
     $data['title'] = ucfirst('edit category');
     $data['positions'] = $this->articleposition_model->get_all_positions();
     if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
