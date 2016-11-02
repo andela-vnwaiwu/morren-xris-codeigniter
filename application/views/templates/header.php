@@ -18,11 +18,11 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>js/countries.js"></script>
   </head>
   <body>
-    <header>
+    <header class="navbar-fixed">
       <nav class="lime lighten-2">
         <div class="container">
           <div class="nav-wrapper">
-            <a href="/morren-xris" class="brand-logo"> Morren-Xris </a>
+            <a href="/morren-xris" class="brand-logo"><img class="logo" src="https://res.cloudinary.com/morren-xris-hotels/image/upload/v1478103395/ogxxm9wbtwgkbax798r5.jpg"/></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li><a href="<?php echo base_url(); ?>">HOME</a></li>
               <li><a href="<?php echo base_url(); ?>about">ABOUT US</a></li>

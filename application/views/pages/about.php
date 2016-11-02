@@ -15,10 +15,10 @@
   <div class="container">
     <div class="row">
       <div class="carousel carousel-slider">
-        <div class="carousel-item"><img src="<?php echo base_url(); ?>images/about-carousel/bar1.jpg"></div>
-        <div class="carousel-item"><img src="<?php echo base_url(); ?>images/about-carousel/food-1.jpg"></div>
-        <div class="carousel-item"><img src="<?php echo base_url(); ?>images/about-carousel/hotel-room-1.jpg"></div>
-        <div class="carousel-item"><img src="<?php echo base_url(); ?>images/about-carousel/pool-side-1.jpg"></div>
+        <div class="carousel-item"><img src="<?php echo base_url(); ?>images/about-carousel/bar3.jpg"></div>
+        <div class="carousel-item"><img src="<?php echo base_url(); ?>images/about-carousel/food.jpg"></div>
+        <div class="carousel-item"><img src="<?php echo base_url(); ?>images/about-carousel/entrance-gate3.jpg"></div>
+        <div class="carousel-item"><img src="<?php echo base_url(); ?>images/about-carousel/pool1.jpg"></div>
       </div>
     </div>
     <div class="row">
@@ -26,21 +26,27 @@
       <p class="text-justify flow-text">
         <strong>Morren-Xris</strong>... for your comfort and relaxation.
       </p>
-      <p class="text-justify flow-text">
+      <div class="flow-text about">
+      <?php if (isset($query)) { ?>
+        <?php echo $query->content; ?>
+      <?php } else { ?>
+        <p class="text-justify flow-text">
         Morren-xris Suites and Gardens is an International standard outfit situated in the heart of Amaokpala, Orumba-North Local
         Government in Anambra State. It is a stone throw from the prestigious Federal Polytecnic, Oko. The ambience of our location
         is such that leaves our guest in utmost comfort and relaxation at its peak. We offer the following services to mention but a few:
       </p>
-      <ul>
-        <li>Maximum security complimented with CCTV monitoring systems</li>
-        <li>24 hours power supply</li>
-        <li>Tastefully furnished rooms and suites with amenities to make you feel at home</li>
-        <li>Standard swimming pool</li>
-        <li>We provide you with different African and Continental dishes served fresh</li>
-        <li>24 hours room service</li>
-        <li>Well trained staffs who will give you utmost attention and ensure your stay with us is enjoyable</li>
+      <ul class="bulleted">
+        <li class="flow-text">Maximum security complimented with CCTV monitoring systems</li>
+        <li class="flow-text">24 hours power supply</li>
+        <li class="flow-text">Tastefully furnished rooms and suites with amenities to make you feel at home</li>
+        <li class="flow-text">Standard swimming pool</li>
+        <li class="flow-text">We provide you with different African and Continental dishes served fresh</li>
+        <li class="flow-text">24 hours room service</li>
+        <li class="flow-text">Well trained staffs who will give you utmost attention and ensure your stay with us is enjoyable</li>
       </ul>
       <p class="text-justify flow-text">A trial will convince you</p>
+      <?php } ?>
+      </div>
       <p class="flow-text">
         <strong>Morren-Xris</strong>...Your comfort is our goal!.
       </p>

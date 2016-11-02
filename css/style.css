@@ -55,14 +55,6 @@ nav ul li a {
     background-color: transparent;
 }
 
-
-/*main{
-  background-color: darkslategray;
-  /*background: url("main.jpg") no-repeat center center fixed;*/
-
-
-/*}*/
-
 .main-body {
     background-color: #eee;
 }
@@ -107,7 +99,7 @@ button {
 }
 
 .carousel-item>img {
-    height: 300px;
+    height: 400px;
 }
 
 .carousel-slider {
@@ -159,4 +151,14 @@ button {
 .center-div {
     width: 50%;
     margin: auto;
+}
+
+.about ul li {
+    list-style-type : square !important;
+    list-style-position: inside;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
 }
