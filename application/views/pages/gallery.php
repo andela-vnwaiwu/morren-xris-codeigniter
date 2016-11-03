@@ -16,7 +16,7 @@
               <p class="flow-text center-align">Images are coming soon...</p>
           <?php } else {?>
         <?php foreach($query as $row) { ?>
-        <div class="col m3 s12 gallery">
+        <div class="col l3 m6 s12 gallery">
             <img class="materialboxed" width="250" height="150" src="<?php echo $row->imagepath; ?>" alt="<?php echo $row->title; ?>" />
         </div>
         <?php } ?>
