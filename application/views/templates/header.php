@@ -16,6 +16,7 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>js/jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>js/materialize.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>js/countries.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>js/index.js"></script>
   </head>
   <body>
     <header class="navbar-fixed">
