@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitaafe7863a404a7d7c7d3868ac7b0ef38
+class ComposerStaticInitbe251ec7f83cec809f4acbdd983b1131
 {
     public static $files = array (
         'c15243c55ab4c20eff78d1e24be20dac' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Helpers.php',
@@ -50,8 +50,8 @@ class ComposerStaticInitaafe7863a404a7d7c7d3868ac7b0ef38
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixesPsr0 = ComposerStaticInitaafe7863a404a7d7c7d3868ac7b0ef38::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitaafe7863a404a7d7c7d3868ac7b0ef38::$classMap;
+            $loader->prefixesPsr0 = ComposerStaticInitbe251ec7f83cec809f4acbdd983b1131::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitbe251ec7f83cec809f4acbdd983b1131::$classMap;
 
         }, null, ClassLoader::class);
     }
