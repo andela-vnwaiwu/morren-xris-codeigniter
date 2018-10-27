@@ -84,7 +84,7 @@ button {
 }
 
 #about-footer {
-    background: url("http://localhost/morren/images/hotel1.png") repeat center center fixed;
+    background: url("hotel1.png") repeat center center fixed;
     color: #fff;
 }
 
@@ -99,7 +99,7 @@ button {
 }
 
 .carousel-item>img {
-    height: 400px;
+    height: 600px;
 }
 
 .carousel-slider {
@@ -183,4 +183,8 @@ button {
 }
 .m6 {
     padding-right: 5px;
+}
+
+.contact-us {
+    margin-top: 30px;
 }

@@ -5,9 +5,17 @@
     </script>
 <section id="contact">
   <div class="container">
-    <h3 class="text-justify"> Contact</h3>
-    <p class="text-justify flow-text">Want to find out more about our services, give us feedback on our services or make a request?</p>
-    <p class="text-justify flow-text">Use the form below or give us a call on:</br>+234 803 307 2447</p>
+    <div class="contact_us">
+      <?php if (isset($contact_us_article)) { ?>
+        <h3 class="text-justify contact-us-header"><?php echo $contact_us_article->title; ?></h3>
+        <p class="text-justify flow-text"><?php echo $contact_us_article->content; ?></p>
+      <?php } else { ?>
+        <h3 class="text-justify"> Contact</h3>
+        <p class="text-justify flow-text">Want to find out more about our services, give us feedback on our services or make a request?</p>
+        <p class="text-justify flow-text">Use the form below or give us a call on:</br>+234 803 307 2447</p>
+      <?php } ?>
+    </div>
+    
   </div>
   <div class="container">
       <form class="col s12" action="<?php echo base_url();?>index.php/contact/sendmail" method="post">

@@ -9,12 +9,21 @@
 
     # for security reason, option followsyslinks cannot be overridden
     # Options +FollowSymLinks
-    Options +SymLinksIfOwnerMatch
-    RewriteEngine on
+    #Options +SymLinksIfOwnerMatch
+    #RewriteEngine on
 
     # Send request viz index.php
+    #RewriteCond %{REQUEST_FILENAME} !-f
+    #RewriteCond %{REQUEST_FILENAME} !-d
+    #RewriteRule ^(.*)$ index.php/$1 [L]
+
+    Options +FollowSymLinks
+    Options -Indexes
+    DirectoryIndex index.php
+    RewriteEngine on
+    RewriteCond $1 !^(index\.php|images|robots\.txt)
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ index.php/$1 [L]
+    RewriteRule ^(.*)$ index.php/$1 [L,QSA]
 
 </IfModule>

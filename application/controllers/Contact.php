@@ -3,9 +3,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Contact extends FrontendController {
 
+  public function __construct() {
+    parent::__construct();
+    $this->load->model('admin/articleposition_model', '', TRUE);
+    $this->load->model('admin/article_model', '', TRUE);
+  }
+
   public function index() {
 
     $data['title'] = ucfirst('contact Us'); // Capitalize the first letter
+    $contact_us_page = $this->articleposition_model->get_position_name('contact_us');
+    
+    $article = $contact_us_page->id;
+    
+    $data['contact_us_article'] = $this->article_model->get_active_article($article);
 
     $this->load->helper('url');
     $this->load->view('templates/header', $data);
